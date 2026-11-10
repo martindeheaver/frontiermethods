@@ -12,8 +12,11 @@
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}html{scroll-behavior:smooth}section[id]{scroll-margin-top:72px}</style>
 <title>Frontier Methods</title>
 <meta name="description" content="Frontier Methods identifies, develops and commercialises breakthrough technologies, using AI to accelerate the path from fundamental research to commercial products.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
+<link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:"Space Grotesk";src:url("fonts/space-grotesk.woff2") format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"Inter";src:url("fonts/inter.woff2") format("woff2");font-weight:400 600;font-display:swap}
 /* Layout: navy masthead with the ascent chevrons; the three-stage engine reads as a rising sequence; open sections on a mist ground. */
 :root{
   --ink:#12233D; --accent:#E07A1F; --accent-ink:#B85F0E;
@@ -153,6 +156,9 @@ section.block .wrap{padding-block:80px}
 .email{font-family:var(--display);font-size:clamp(20px,3vw,28px);color:var(--band-fg);user-select:all;word-break:break-all}
 .copy{min-height:44px;padding:0 16px;border:1px solid #3A5277;background:transparent;color:var(--band-fg);font:600 14px var(--body);border-radius:4px;cursor:pointer}
 .copy:hover{border-color:var(--accent)}
+.yt{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-top:8px;color:var(--band-fg);font-weight:600;text-decoration:none}
+.yt:hover{color:var(--accent)}
+footer.site a{color:var(--band-muted)}footer.site a:hover{color:var(--band-fg)}
 footer.site{background:var(--band);color:var(--band-muted);border-top:1px solid var(--band-line);font-size:14px}
 footer.site .wrap{padding-block:24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
@@ -369,6 +375,9 @@ footer.site .wrap{padding-block:24px;display:flex;justify-content:space-between;
         <a class="email" id="email" href="mailto:contact@frontiermethods.com">contact@frontiermethods.com</a>
         <button class="copy" id="copy-email" type="button">Copy email</button>
       </div>
+      <a class="yt" href="https://www.youtube.com/@Frontier-Methods" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"></rect><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor"></path></svg>
+        Watch Frontier Methods on YouTube</a>
     </div>
   </section>
 </main>
@@ -376,7 +385,7 @@ footer.site .wrap{padding-block:24px;display:flex;justify-content:space-between;
 <footer class="site">
   <div class="wrap">
     <span>© 2026 Frontier Methods · frontiermethods.com</span>
-    <span>Frontier Methods is a trading name of Datawell Technologies Limited</span>
+    <span>Frontier Methods is a trading name of Datawell Technologies Limited · <a href="privacy.html">Privacy</a> · <a href="https://www.youtube.com/@Frontier-Methods" rel="noopener">YouTube</a></span>
   </div>
 </footer>
 
