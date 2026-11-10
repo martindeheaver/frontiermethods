@@ -1,76 +1,395 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Frontier Methods is an independent research initiative exploring community-scale intelligence through shared world models, distributed inference and network–compute co-design.">
-<title>Frontier Methods — Researching community-scale intelligence</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Frontier Methods">
+<meta property="og:description" content="AI-accelerated technology development, from fundamental research to commercial products.">
+<meta property="og:image" content="https://frontiermethods.com/og-image.png">
+<meta property="og:url" content="https://frontiermethods.com/">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}html{scroll-behavior:smooth}section[id]{scroll-margin-top:72px}</style>
+<title>Frontier Methods</title>
+<meta name="description" content="Frontier Methods identifies, develops and commercialises breakthrough technologies, using AI to accelerate the path from fundamental research to commercial products.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
 <style>
-:root{--bg:#070d13;--surface:#0d1721;--surface2:#111f2b;--ink:#edf4f7;--muted:#a4b4c0;--faint:#718493;--line:#233541;--mint:#a5f3d5;--cyan:#7dd8e8;--max:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button,a{ -webkit-tap-highlight-color:transparent}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(7,13,19,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(164,180,192,.14)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:26px}.brand{display:flex;align-items:center;gap:12px;font-weight:760;letter-spacing:.035em;font-size:13px}.logo{width:35px;height:35px;border:1px solid var(--mint);border-radius:50%;display:grid;place-items:center;color:var(--mint);font-size:19px}.navlinks{display:flex;gap:25px;color:var(--muted);font-size:13px}.navlinks a:hover,.footlinks a:hover{color:var(--mint)}.nav-cta{border:1px solid #3d5966;padding:9px 13px;border-radius:4px;font-size:12px;letter-spacing:.03em}.nav-cta:hover{border-color:var(--mint);color:var(--mint)}
-.hero{padding:105px 0 76px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 76% 14%,rgba(64,143,150,.12),transparent 42%),linear-gradient(180deg,#09131c 0%,var(--bg) 100%)}.hero-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}.eyebrow{font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--mint);font-weight:760}.hero h1{font-size:clamp(46px,6.2vw,78px);line-height:1.035;letter-spacing:-.068em;margin:23px 0 25px;font-weight:640}.hero h1 em{font-style:normal;color:var(--mint)}.lead{max-width:670px;font-size:18px;line-height:1.72;color:#c1ced6}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:13px 17px;border-radius:4px;background:var(--mint);color:#07140f;font-weight:760;font-size:13px}.btn.outline{background:transparent;color:var(--ink);border:1px solid #3b505e}.btn:hover{filter:brightness(1.06)}.hero-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:36px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}.hero-meta span:before{content:"";display:inline-block;width:5px;height:5px;background:var(--mint);border-radius:50%;margin:0 8px 1px 0}
-.visual{position:relative;min-height:430px;border:1px solid #233b47;border-radius:7px;overflow:hidden;background:linear-gradient(145deg,#0d1c27,#08111a)}.visual-label{position:absolute;top:17px;left:19px;right:19px;display:flex;justify-content:space-between;gap:10px;font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#8398a5}.visual svg{width:100%;height:100%;min-height:430px;display:block}.visual-caption{position:absolute;bottom:16px;left:19px;right:19px;display:flex;justify-content:space-between;gap:12px;font-size:10px;color:#8ca0ad}.visual-caption span:last-child{color:var(--mint)}
-.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0;color:#8ea2af;font-size:10px;letter-spacing:.13em;text-transform:uppercase}.ticker-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.section{padding:94px 0;border-bottom:1px solid rgba(164,180,192,.12)}.section-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px}.side-label{font-size:11px;color:var(--mint);letter-spacing:.16em;text-transform:uppercase}.section h2{font-size:clamp(32px,4vw,50px);line-height:1.12;letter-spacing:-.05em;font-weight:620;margin:14px 0 20px}.section-intro{color:var(--muted);font-size:17px;max-width:680px}.statement{font-size:22px;line-height:1.5;letter-spacing:-.02em;border-left:2px solid var(--mint);padding:4px 0 4px 23px;margin:0 0 24px}.body{color:var(--muted);font-size:15px}
-.architecture{margin-top:35px;border:1px solid var(--line);border-radius:7px;background:#09141d;padding:25px}.arch-top{display:flex;justify-content:space-between;gap:16px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#7f95a3;margin-bottom:22px}.arch-grid{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:12px;align-items:stretch}.arch-node{padding:17px 15px;border:1px solid #2d4654;border-radius:5px;background:#0c1b26;min-height:176px}.arch-node.center{border-color:#70bda8;background:linear-gradient(145deg,rgba(165,243,213,.08),rgba(9,25,34,.5))}.node-tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}.arch-node h3{font-size:15px;line-height:1.35;margin:12px 0 8px}.arch-node p{font-size:12px;line-height:1.6;color:#9db0bc;margin:0}.node-symbol{font-size:23px;color:var(--mint);margin-top:18px}.arch-arrows{text-align:center;font-size:10px;color:#8dc8ba;letter-spacing:.08em;margin:14px 0}.arch-foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:20px;padding-top:14px;font-size:10px;color:#8296a3}.arch-foot strong{color:#c5d4db;font-weight:500}
-.questions{display:grid;grid-template-columns:repeat(2,1fr);gap:0 30px;margin-top:20px}.question{padding:23px 0;border-top:1px solid var(--line)}.qnum{font-size:10px;color:var(--mint);letter-spacing:.13em}.question h3{font-size:18px;line-height:1.4;margin:9px 0}.question p{font-size:14px;color:var(--muted);margin:0}
-.workstreams{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}.work{border:1px solid var(--line);background:linear-gradient(160deg,#0e1a24,#0a121a);padding:23px;border-radius:5px;min-height:225px}.work .number{font-size:10px;letter-spacing:.12em;color:var(--mint)}.work h3{font-size:18px;line-height:1.35;margin:17px 0 9px}.work p{font-size:13px;color:var(--muted);margin:0}
-.method{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:35px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.method-step{padding:22px 20px 22px 0}.method-step+.method-step{padding-left:20px;border-left:1px solid var(--line)}.method-step b{display:block;font-size:11px;color:var(--mint);letter-spacing:.1em;margin-bottom:10px}.method-step h3{font-size:15px;margin:0 0 7px}.method-step p{font-size:12px;color:var(--muted);margin:0}
-.horizon{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}.horizon article{border:1px solid var(--line);padding:23px;border-radius:5px}.pill{display:inline-block;border:1px solid #47685e;border-radius:3px;color:var(--mint);padding:4px 7px;font-size:9px;letter-spacing:.12em;text-transform:uppercase}.horizon h3{font-size:18px;margin:15px 0 8px}.horizon p{color:var(--muted);font-size:13px;margin:0}
-.contact-panel{padding:clamp(30px,5vw,60px);border:1px solid #34534f;border-radius:7px;background:radial-gradient(ellipse at 85% 20%,rgba(111,208,177,.1),transparent 45%),#0b1922;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.contact-panel h2{font-size:clamp(32px,4vw,46px);margin:13px 0}.contact-panel p{color:var(--muted);max-width:670px;margin:0}.contact-actions{display:flex;flex-direction:column;gap:10px;align-items:stretch}.contact-actions a{white-space:nowrap}
-footer{padding:27px 0 34px;color:#7d919e;font-size:11px}.footer-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footlinks{display:flex;gap:19px}.footer-note{max-width:850px;font-size:10px;line-height:1.6;color:#617582;margin-top:22px}
-@media(max-width:900px){.hero-layout{grid-template-columns:1fr;gap:38px}.visual{min-height:360px}.visual svg{min-height:360px}.section-grid{grid-template-columns:1fr;gap:22px}.workstreams{grid-template-columns:repeat(2,1fr)}.method{grid-template-columns:repeat(2,1fr)}.method-step:nth-child(3){border-left:0;padding-left:0;border-top:1px solid var(--line)}.method-step:nth-child(4){border-top:1px solid var(--line)}}
-@media(max-width:650px){.wrap{width:calc(100% - 32px)}.nav{height:66px}.navlinks{display:none}.nav-cta{font-size:11px;padding:8px 10px}.hero{padding:70px 0 55px}.hero h1{font-size:clamp(43px,12vw,62px)}.lead{font-size:16px}.visual,.visual svg{min-height:320px}.section{padding:66px 0}.arch-grid{grid-template-columns:1fr}.arch-node{min-height:unset}.questions,.workstreams,.horizon{grid-template-columns:1fr}.work{min-height:unset}.method{grid-template-columns:1fr}.method-step,.method-step+.method-step{padding:19px 0;border-left:0;border-top:1px solid var(--line)}.method-step:first-child{border-top:0}.contact-panel{grid-template-columns:1fr}.contact-actions{align-items:flex-start}.ticker-inner{justify-content:flex-start}.arch-top{flex-direction:column}.statement{font-size:19px}}
+/* Layout: navy masthead with the ascent chevrons; the three-stage engine reads as a rising sequence; open sections on a mist ground. */
+:root{
+  --ink:#12233D; --accent:#E07A1F; --accent-ink:#B85F0E;
+  --bg:#F6F7F9; --fg:#12233D; --card:#FFFFFF; --line:#D9DEE6; --muted:#4A5568;
+  --band:#12233D; --band-fg:#F6F7F9; --band-muted:#B8C2D3; --band-line:#2E4363;
+  --display:'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --body:Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C1828; --fg:#E8ECF2; --card:#13233A; --line:#24385A; --muted:#A9B5C7;
+  --accent-ink:#F0954A; --band:#081120; --band-line:#24385A; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0C1828; --fg:#E8ECF2; --card:#13233A; --line:#24385A; --muted:#A9B5C7;
+  --accent-ink:#F0954A; --band:#081120; --band-line:#24385A; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--band)}
+a{color:var(--accent-ink)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-0.02em}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+.on-band .eyebrow{color:var(--accent)}
+
+/* Header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--band);color:var(--band-fg);border-bottom:1px solid var(--band-line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-0.01em}
+.brand span{font-weight:400}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:var(--band-muted);text-decoration:none;font-size:15px;font-weight:500}
+nav a:hover{color:var(--band-fg)}
+
+/* Hero */
+.hero{background:var(--band);color:var(--band-fg);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:72px 88px}
+.hero h1{font-size:clamp(36px,5.6vw,64px);line-height:1.05;font-weight:600;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--band-muted);font-size:18px;max-width:36em;margin:22px 0 0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;font-weight:600;font-size:15px;text-decoration:none;border-radius:4px}
+.btn.primary{background:var(--accent);color:#12233D}
+.btn.ghost{color:var(--band-fg);border:1px solid #3A5277}
+.hero-mark{justify-self:center;width:100%;max-width:320px}
+.hero-mark path{stroke-dasharray:80;stroke-dashoffset:80;animation:rise .9s ease-out forwards}
+.hero-mark path:nth-child(2){animation-delay:.2s}
+.hero-mark path:nth-child(3){animation-delay:.4s}
+@keyframes rise{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.hero-mark path{animation:none;stroke-dashoffset:0}}
+
+/* Sections */
+section.block{border-top:1px solid var(--line)}
+section.block .wrap{padding-block:80px}
+.section-head{display:grid;gap:12px;max-width:680px;margin-bottom:44px}
+.section-head h2{font-size:clamp(28px,4vw,40px);font-weight:600}
+.section-head p{margin:0;color:var(--muted)}
+
+/* Purpose statement */
+.purpose{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:48px;align-items:start}
+.purpose blockquote{margin:0;font-family:var(--display);font-size:clamp(24px,3.2vw,34px);line-height:1.25;letter-spacing:-0.01em;font-weight:500;border-left:4px solid var(--accent);padding-left:24px}
+.purpose p{margin:0 0 16px;color:var(--muted);max-width:36em}
+
+/* Engine: three rising stages */
+.engine{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:end}
+.stage{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:26px;display:grid;gap:10px;min-width:0}
+.stage:nth-child(2){margin-bottom:28px}
+.stage:nth-child(3){margin-bottom:56px;border-color:var(--accent)}
+.stage .num{font-family:var(--display);font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stage .verb{font-family:var(--display);font-size:30px;font-weight:600}
+.stage:nth-child(3) .verb{color:var(--accent-ink)}
+.stage h3{font-size:17px;font-weight:600;font-family:var(--body);letter-spacing:0}
+.stage p{margin:0;color:var(--muted)}
+.loop{margin-top:28px;display:flex;gap:14px;align-items:flex-start;max-width:760px;color:var(--fg)}
+.loop svg{flex:none;margin-top:3px}
+.loop p{margin:0}
+
+/* AI model band */
+.ai{background:var(--band);color:var(--band-fg)}
+.ai .wrap{padding-block:80px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:56px}
+.ai h2{font-size:clamp(28px,4vw,40px);margin-top:12px}
+.ai .lead{color:var(--band-muted);margin:18px 0 0;max-width:34em}
+.ai ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.ai li{padding:12px 0 12px 26px;border-bottom:1px solid var(--band-line);position:relative;min-width:0}
+.ai li::before{content:"";position:absolute;left:2px;top:19px;width:10px;height:10px;border-top:2.5px solid var(--accent);border-left:2.5px solid var(--accent);transform:rotate(45deg)}
+.limits{margin-top:28px;padding:20px 22px;border:1px solid var(--band-line);border-radius:6px;color:var(--band-muted)}
+.limits strong{color:var(--band-fg)}
+
+/* Domains */
+.domains{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.domain{padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:8px;align-content:start;min-width:0}
+.domain h3{font-size:21px;font-weight:600}
+.domain p{margin:0;color:var(--muted)}
+.note{margin-top:18px;font-size:14px;color:var(--muted)}
+
+/* Structure */
+.tree{display:grid;gap:0;justify-items:center;max-width:820px;margin:0 auto}
+.node{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 24px;text-align:center;width:100%;min-width:0}
+.node h3{font-size:20px;font-weight:600}
+.node p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.node.top{background:var(--band);color:var(--band-fg);border-color:var(--band)}
+.node.top p{color:var(--band-muted)}
+.node.top h3 span{color:var(--accent)}
+.stem{width:2px;height:28px;background:var(--line)}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%;margin-top:14px}
+.trio div{border-top:3px solid var(--accent);background:var(--bg);padding:12px;border-radius:0 0 4px 4px}
+.trio b{display:block;font-family:var(--display);font-size:16px}
+.trio span{font-size:14px;color:var(--muted)}
+.node.out{border-style:dashed}
+.structure-copy{max-width:680px;margin:36px auto 0;color:var(--muted)}
+
+/* Current work */
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.project{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.project header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.project h3{font-size:21px;font-weight:600}
+.status{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.status.live{border-color:#2BA88F;color:#1F7F6B}
+:root[data-theme="dark"] .status.live{color:#5ED1B7}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .status.live{color:#5ED1B7}}
+.status.flag{border-color:var(--accent);color:var(--accent-ink)}
+.project p{margin:0;color:var(--muted)}
+
+/* About */
+.about{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px}
+.about p{margin:0 0 16px;max-width:38em}
+.facts{border-left:3px solid var(--accent);padding-left:22px;display:grid;gap:14px;align-content:start;margin:0}
+.facts dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.facts dd{margin:2px 0 0;font-family:var(--display);font-size:18px;font-variant-numeric:tabular-nums}
+
+/* Contact */
+.contact{background:var(--band);color:var(--band-fg)}
+.contact .wrap{padding-block:72px;display:grid;gap:18px;justify-items:start}
+.contact h2{font-size:clamp(28px,4vw,44px)}
+.contact p{color:var(--band-muted);margin:0;max-width:38em}
+.email-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.email{font-family:var(--display);font-size:clamp(20px,3vw,28px);color:var(--band-fg);user-select:all;word-break:break-all}
+.copy{min-height:44px;padding:0 16px;border:1px solid #3A5277;background:transparent;color:var(--band-fg);font:600 14px var(--body);border-radius:4px;cursor:pointer}
+.copy:hover{border-color:var(--accent)}
+footer.site{background:var(--band);color:var(--band-muted);border-top:1px solid var(--band-line);font-size:14px}
+footer.site .wrap{padding-block:24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero .wrap,.purpose,.ai .wrap,.about{grid-template-columns:minmax(0,1fr)}
+  .hero .wrap{padding-block:48px 56px}
+  .hero-mark{max-width:170px;justify-self:start;order:-1}
+  .engine{grid-template-columns:minmax(0,1fr)}
+  .stage:nth-child(n){margin-bottom:0}
+  .domains{grid-template-columns:repeat(2,minmax(0,1fr))}
+  section.block .wrap,.ai .wrap{padding-block:56px}
+}
+@media (max-width:560px){
+  .domains,.ai ul,.trio{grid-template-columns:minmax(0,1fr)}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#top"><span class="logo">∴</span><span>FRONTIER METHODS</span></a><nav class="navlinks" aria-label="Main navigation"><a href="#thesis">Thesis</a><a href="#architecture">Architecture</a><a href="#research">Research agenda</a><a href="#method">Method</a></nav><a class="nav-cta" href="#contact">Research enquiries ↗</a></div></header>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Frontier Methods home">
+      <svg viewBox="0 0 64 64" width="30" height="30" aria-hidden="true" fill="none" stroke-width="6"><path d="M8 58 L32 38 L56 58" stroke="#F6F7F9" opacity="0.45"></path><path d="M8 44 L32 24 L56 44" stroke="#F6F7F9"></path><path d="M8 30 L32 10 L56 30" stroke="#E07A1F"></path></svg>
+      Frontier <span>Methods</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#model">How we work</a></li>
+        <li><a href="#domains">Domains</a></li>
+        <li><a href="#structure">Structure</a></li>
+        <li><a href="#work">Current work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 <main id="top">
-<section class="hero"><div class="wrap hero-layout"><div><div class="eyebrow">Independent research · Distributed intelligence</div><h1>Rethinking the<br>architecture of <em>AI.</em></h1><p class="lead">Frontier Methods investigates community-scale intelligence: lightweight local models working with shared world models, coordinated by communications designed for distributed inference.</p><div class="hero-actions"><a class="btn" href="#thesis">Read the research thesis <span>↓</span></a><a class="btn outline" href="#research">Explore research questions ↗</a></div><div class="hero-meta"><span>AI systems</span><span>Semiconductor architecture</span><span>Network co-design</span></div></div>
-<div class="visual"><div class="visual-label"><span>FM / Concept 001</span><span>Community intelligence system</span></div>
-<svg viewBox="0 0 560 430" role="img" aria-label="Abstract diagram of local intelligence nodes connected to a shared community model and network layer">
-<defs><radialGradient id="glow"><stop offset="0" stop-color="#a5f3d5" stop-opacity=".17"/><stop offset="1" stop-color="#a5f3d5" stop-opacity="0"/></radialGradient><linearGradient id="core" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#153a40"/><stop offset="1" stop-color="#10212d"/></linearGradient></defs>
-<circle cx="286" cy="208" r="160" fill="url(#glow)"/>
-<g stroke="#36515d" stroke-width="1" fill="none" opacity=".8">
-<path d="M90 113 L209 160 L285 112 L385 159 L466 106"/><path d="M70 235 L177 222 L285 282 L405 225 L489 265"/><path d="M90 113 L70 235 L115 337 L245 350 L405 225 L466 106"/><path d="M209 160 L177 222 L245 350"/><path d="M285 112 L285 208 L285 282"/><path d="M385 159 L405 225 L390 337"/><path d="M466 106 L489 265 L390 337 L245 350"/><path d="M90 113 L177 222 L285 208 L405 225 L466 106" stroke="#a5f3d5" stroke-opacity=".45" stroke-dasharray="3 6"/>
-</g>
-<g fill="#10232d" stroke="#577483" stroke-width="1.2">
-<circle cx="90" cy="113" r="18"/><circle cx="70" cy="235" r="15"/><circle cx="115" cy="337" r="13"/><circle cx="209" cy="160" r="13"/><circle cx="177" cy="222" r="15"/><circle cx="245" cy="350" r="17"/><circle cx="385" cy="159" r="15"/><circle cx="405" cy="225" r="14"/><circle cx="390" cy="337" r="12"/><circle cx="466" cy="106" r="17"/><circle cx="489" cy="265" r="14"/>
-</g>
-<g fill="#a5f3d5"><circle cx="90" cy="113" r="4"/><circle cx="70" cy="235" r="3.5"/><circle cx="115" cy="337" r="3"/><circle cx="209" cy="160" r="3"/><circle cx="177" cy="222" r="3.5"/><circle cx="245" cy="350" r="4"/><circle cx="385" cy="159" r="3.5"/><circle cx="405" cy="225" r="3"/><circle cx="390" cy="337" r="3"/><circle cx="466" cy="106" r="4"/><circle cx="489" cy="265" r="3.5"/></g>
-<rect x="216" y="158" width="138" height="104" rx="6" fill="url(#core)" stroke="#a5f3d5" stroke-width="1.4"/>
-<path d="M245 188h80M245 198h54M245 208h67" stroke="#77bda9" stroke-width="1.5" stroke-linecap="round"/>
-<circle cx="285" cy="230" r="9" fill="none" stroke="#a5f3d5" stroke-width="1.4"/><circle cx="285" cy="230" r="3" fill="#a5f3d5"/>
-<g font-family="system-ui,sans-serif" fill="#b4c7d0" font-size="9" letter-spacing="1.2"><text x="48" y="82">LOCAL MODELS</text><text x="360" y="80">COMMUNITY NODES</text><text x="218" y="285" fill="#a5f3d5">SHARED WORLD MODEL</text><text x="70" y="272">EDGE</text><text x="432" y="300">NETWORK</text></g>
-<g fill="#a5f3d5"><circle cx="177" cy="222" r="2"/><circle cx="405" cy="225" r="2"/><circle cx="285" cy="112" r="2"/></g>
-</svg><div class="visual-caption"><span>Conceptual system map · Not to scale</span><span>MODEL ↔ CONTEXT ↔ NETWORK</span></div></div></div></section>
-<div class="ticker"><div class="wrap ticker-inner"><span>Shared world models</span><span>Distributed inference</span><span>Compute–network co-design</span><span>Trustworthy coordination</span></div></div>
-<section class="section" id="thesis"><div class="wrap section-grid"><div><div class="side-label">01 / Research thesis</div><h2>Intelligence may be a property of the system, not just the model.</h2></div><div><p class="statement">What changes when a community of local AI systems can access a shared, continuously maintained representation of the world?</p><p class="body">Today's AI architectures often separate device-level intelligence, cloud inference and communications infrastructure. Frontier Methods explores an alternative: design the model, compute substrate and network as a coordinated system, so that local agents can collaborate without sending every task to a remote, general-purpose service.</p><p class="body">This is a research proposition, not a claim that a complete architecture already exists. The goal is to identify where shared context creates measurable advantages—and what hardware, protocols and governance it requires.</p></div></div></section>
-<section class="section" id="architecture"><div class="wrap"><div class="section-grid"><div><div class="side-label">02 / System architecture</div><h2>Three interacting layers.</h2><p class="body">The design space spans model representation, runtime placement and the communication fabric. Optimising one layer in isolation may simply move the bottleneck elsewhere.</p></div><div><div class="architecture"><div class="arch-top"><span>Conceptual reference architecture</span><span>Research hypothesis / v0.2</span></div><div class="arch-grid"><article class="arch-node"><div class="node-tag">Layer 01</div><div class="node-symbol">⌘</div><h3>Local models</h3><p>Low-latency inference, local observations and user-controlled context at the edge.</p></article><article class="arch-node center"><div class="node-tag">Layer 02 · Shared</div><div class="node-symbol">✳</div><h3>Community world model</h3><p>A common representation of relevant state, with explicit mechanisms for updates, versioning, access and consistency.</p></article><article class="arch-node"><div class="node-tag">Layer 03</div><div class="node-symbol">⌁</div><h3>Network and coordination</h3><p>Message exchange, resource discovery and task placement under latency, energy and bandwidth constraints.</p></article></div><div class="arch-arrows">↔ CONTEXT EXCHANGE · STATE UPDATES · COOPERATIVE INFERENCE ↔</div><div class="arch-foot"><span><strong>Possible substrate:</strong> dedicated accelerator / ASIC</span><span><strong>Key constraint:</strong> end-to-end performance</span></div></div></div></div></div></section>
-<section class="section" id="research"><div class="wrap"><div class="side-label">03 / Research agenda</div><h2>Questions before claims.</h2><p class="section-intro">The agenda is organised around falsifiable questions and measurable systems outcomes—not a predetermined technology stack.</p><div class="questions">
-<article class="question"><div class="qnum">RQ 01 / REPRESENTATION</div><h3>What should the shared world model contain?</h3><p>Which information belongs in stable model parameters, dynamic shared state, local private context or transient messages? How can compact representations preserve task-relevant meaning?</p></article>
-<article class="question"><div class="qnum">RQ 02 / CONSISTENCY</div><h3>How does a distributed community maintain coherent state?</h3><p>Investigate update propagation, provenance, conflict resolution, stale context and operation through partitions or intermittent connectivity.</p></article>
-<article class="question"><div class="qnum">RQ 03 / INFERENCE</div><h3>Where should each task run?</h3><p>Develop placement policies that balance response time, energy, privacy, model capability, network load and shared-resource availability.</p></article>
-<article class="question"><div class="qnum">RQ 04 / SILICON</div><h3>What deserves a dedicated accelerator?</h3><p>Profile the workload before fixing the hardware. Explore memory hierarchy, data movement, precision, throughput and deterministic latency for candidate operations.</p></article>
-<article class="question"><div class="qnum">RQ 05 / NETWORK</div><h3>What communications fabric does cooperation require?</h3><p>Quantify message size, fan-out, burstiness and latency budgets; test scheduling, routing and graceful degradation under constrained bandwidth.</p></article>
-<article class="question"><div class="qnum">RQ 06 / TRUST</div><h3>Who controls shared intelligence?</h3><p>Address identity, consent, permissions, data minimisation, malicious updates, auditability and the ability to leave or reconfigure a community.</p></article>
-</div></div></section>
-<section class="section"><div class="wrap"><div class="side-label">04 / Technical workstreams</div><h2>From first principles to prototypes.</h2><p class="section-intro">A staged programme can reduce uncertainty early and make each research investment answer a concrete question.</p><div class="workstreams">
-<article class="work"><div class="number">WORKSTREAM 01</div><h3>Model and state decomposition</h3><p>Define the boundary between fixed weights, community state, local memory and messages. Establish candidate data structures and update semantics.</p></article>
-<article class="work"><div class="number">WORKSTREAM 02</div><h3>Distributed runtime</h3><p>Build a simulator to compare local-only, cloud-mediated and community-assisted inference under repeatable workload and network conditions.</p></article>
-<article class="work"><div class="number">WORKSTREAM 03</div><h3>Hardware workload study</h3><p>Profile operations, memory traffic and latency targets before deciding whether an ASIC or another accelerator is justified.</p></article>
-<article class="work"><div class="number">WORKSTREAM 04</div><h3>Network co-design</h3><p>Derive communication requirements from measured inference workloads, then evaluate radio, routing and medium-access trade-offs.</p></article>
-<article class="work"><div class="number">WORKSTREAM 05</div><h3>Security and governance</h3><p>Threat-model node compromise, poisoned updates, privacy leakage and resource abuse. Treat trust as a system property.</p></article>
-<article class="work"><div class="number">WORKSTREAM 06</div><h3>Benchmarks and evidence</h3><p>Publish baselines, assumptions and reproducible measurements for latency, bandwidth, energy, availability and task quality.</p></article>
-</div></div></section>
-<section class="section" id="method"><div class="wrap"><div class="side-label">05 / Research method</div><h2>Make the architecture earn its complexity.</h2><p class="section-intro">A credible path begins with a baseline, isolates the value of shared context, then adds specialised hardware or network novelty only where evidence supports it.</p><div class="method">
-<div class="method-step"><b>STEP 01</b><h3>Specify</h3><p>Define workloads, community assumptions, threat model and success metrics.</p></div>
-<div class="method-step"><b>STEP 02</b><h3>Simulate</h3><p>Compare architectures under controlled latency, bandwidth and failure conditions.</p></div>
-<div class="method-step"><b>STEP 03</b><h3>Prototype</h3><p>Build the smallest end-to-end system that can test the core hypotheses.</p></div>
-<div class="method-step"><b>STEP 04</b><h3>Measure</h3><p>Publish results, limitations and negative findings; revise the design accordingly.</p></div>
-</div><div class="horizon"><article><span class="pill">Near-term investigation</span><h3>Workload and systems research</h3><p>Model decomposition, distributed runtime simulation, message budgets, baseline comparisons and threat modelling are tractable first steps with clear evaluation criteria.</p></article><article><span class="pill">Longer-term horizon</span><h3>Emerging radio technologies</h3><p>Rydberg-atom receivers and other unconventional approaches may merit monitoring as research into broadband reception and sensing advances. Their suitability for low-power, high-bandwidth community networking remains an open experimental question.</p></article></div></div></section>
-<section class="section"><div class="wrap"><div class="contact-panel" id="contact"><div><div class="side-label">06 / Collaboration</div><h2>Help test the hypothesis.</h2><p>Frontier Methods welcomes research conversations with people working in distributed AI, model systems, computer architecture, semiconductor design, wireless networks and security. The most useful starting point is a hard technical question, a relevant workload or a benchmark we can challenge together.</p></div><div class="contact-actions"><a class="btn" href="mailto:hello@frontiermethods.com?subject=Frontier%20Methods%20research%20discussion">Discuss a research question ↗</a><a class="btn outline" href="mailto:hello@frontiermethods.com?subject=Frontier%20Methods%20collaboration">Propose a collaboration ↗</a></div></div></div></section>
+  <section class="hero on-band">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">AI-accelerated technology development</div>
+        <h1>We develop the technologies that create <em>new technological possibilities</em>.</h1>
+        <p>Frontier Methods identifies, develops and commercialises breakthrough technologies across scientific and engineering disciplines, using AI to shorten the journey from fundamental research to commercially viable products.</p>
+        <div class="cta">
+          <a class="btn primary" href="#model">How we work</a>
+          <a class="btn ghost" href="#contact">Partner with us</a>
+        </div>
+      </div>
+      <svg class="hero-mark" viewBox="0 0 64 64" role="img" aria-label="Frontier Methods ascent mark" fill="none" stroke-width="6">
+        <path d="M8 58 L32 38 L56 58" stroke="#F6F7F9" opacity="0.45"></path>
+        <path d="M8 44 L32 24 L56 44" stroke="#F6F7F9"></path>
+        <path d="M8 30 L32 10 L56 30" stroke="#E07A1F"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section class="block" id="purpose">
+    <div class="wrap purpose">
+      <div>
+        <div class="eyebrow">Our purpose</div>
+        <blockquote style="margin-top:16px">We don't just use technology. We develop the technologies that create new technological possibilities.</blockquote>
+      </div>
+      <div>
+        <p>Our purpose is to identify, develop and commercialise breakthrough technologies across multiple scientific and engineering disciplines.</p>
+        <p>We use artificial intelligence to accelerate every step of that journey, so a small, focused team can take ideas from fundamental research to products, licences and new companies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="model">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How we work</div>
+        <h2>One engine, three stages</h2>
+        <p>Each technology moves through the same path, from opportunity to working prototype to commercial outcome.</p>
+      </div>
+      <div class="engine">
+        <div class="stage">
+          <div class="num">01 · Frontier Research</div>
+          <div class="verb">Discover</div>
+          <p>We look for opportunities in scientific research, patents, emerging technologies and unsolved engineering problems.</p>
+        </div>
+        <div class="stage">
+          <div class="num">02 · Rapid Development</div>
+          <div class="verb">Develop</div>
+          <p>We use AI agents, simulation, software, automated design and rapid prototyping to turn promising ideas into working technology.</p>
+        </div>
+        <div class="stage">
+          <div class="num">03 · Commercialisation</div>
+          <div class="verb">Commercialise</div>
+          <p>We validate, manufacture, license or spin out the resulting technologies as commercial businesses.</p>
+        </div>
+      </div>
+      <div class="loop">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 4v5h-5"></path></svg>
+        <p>The stages reinforce one another. Every project leaves behind knowledge, infrastructure and methods that make the next one faster and cheaper, so Frontier Methods grows into a technology development engine rather than a collection of separate projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ai on-band" id="ai">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">The role of AI</div>
+        <h2>A small team with the reach of a large one</h2>
+        <p class="lead">AI sits at the centre of how we operate. We use it to take on research and engineering that would once have needed a much larger organisation and far more time. Specialised AI agents support our team in:</p>
+      </div>
+      <div>
+        <ul>
+          <li>Scientific literature and patent research</li>
+          <li>Finding promising research that has not been commercialised</li>
+          <li>Mathematical and computational modelling</li>
+          <li>Electronic circuit and hardware architecture design</li>
+          <li>Writing and testing software</li>
+          <li>Running simulations and analysing experimental results</li>
+          <li>Building prototypes and technical documentation</li>
+          <li>Finding manufacturing partners and routes to market</li>
+        </ul>
+        <div class="limits"><strong>What AI does not replace.</strong> Physical experimentation, independent verification, specialist engineering judgement and regulatory validation are built into every project.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="domains">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Research domains</div>
+        <h2>One company, many disciplines</h2>
+        <p>We organise our work into research domains rather than separate brands, so methods and infrastructure carry across fields.</p>
+      </div>
+      <div class="domains">
+        <div class="domain"><h3>Intelligence &amp; AI</h3><p>Distributed intelligence, autonomous systems and new AI architectures.</p></div>
+        <div class="domain"><h3>Computing &amp; Electronics</h3><p>Novel processors, ASICs, embedded systems and computing architectures.</p></div>
+        <div class="domain"><h3>Communications</h3><p>Advanced RF, sensing, networking and novel communications systems.</p></div>
+        <div class="domain"><h3>Applied Physics</h3><p>Novel sensors, photonics, materials and physics-based engineering.</p></div>
+        <div class="domain"><h3>Automation &amp; Robotics</h3><p>Intelligent machines, industrial systems and autonomous engineering.</p></div>
+        <div class="domain"><h3>Energy &amp; Infrastructure</h3><p>New energy systems, distributed infrastructure and resilience technologies.</p></div>
+      </div>
+      <p class="note">These are the areas we expect to work in. Not all of them are active today.</p>
+    </div>
+  </section>
+
+  <section class="block" id="structure">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Structure</div>
+        <h2>Deliberately simple</h2>
+      </div>
+      <div class="tree">
+        <div class="node top">
+          <h3>Frontier <span>Methods</span></h3>
+          <p>Parent company · Intellectual property · Research infrastructure</p>
+        </div>
+        <div class="stem" aria-hidden="true"></div>
+        <div class="node">
+          <h3>Frontier Methods Research &amp; Development</h3>
+          <p>Central AI-enabled research and engineering capability</p>
+          <div class="trio">
+            <div><b>Research</b><span>Scientific discovery</span></div>
+            <div><b>Engineering</b><span>Prototyping</span></div>
+            <div><b>Ventures</b><span>Commercialisation</span></div>
+          </div>
+        </div>
+        <div class="stem" aria-hidden="true"></div>
+        <div class="node out">
+          <h3>Independent commercial ventures</h3>
+          <p>Spin-outs · Licensing · Products · Partnerships</p>
+        </div>
+      </div>
+      <p class="structure-copy">Intellectual property and development capability stay together in one UK company. We create separate commercial entities only when a technology justifies it, for example where external investment, liability or different ownership arrangements make that the better choice.</p>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Current work</div>
+        <h2>Technologies in progress</h2>
+        <p>Early projects across AI quality, personal health data and offline, on-device intelligence.</p>
+      </div>
+      <div class="projects">
+        <article class="project"><header><h3>CADRIA.org</h3><span class="status live">Live</span></header><p>Scores AI outputs for quality, safety and actionability using specialised AI "Human Digital Representatives".</p></article>
+        <article class="project"><header><h3>HealthHub</h3><span class="status">In development</span></header><p>An Android app for personal health data that keeps the user in control and their data private.</p></article>
+        <article class="project"><header><h3>Datawell</h3><span class="status flag">Platform</span></header><p>Core data infrastructure that our other products are built on.</p></article>
+        <article class="project"><header><h3>PAIX</h3><span class="status">In development</span></header><p>Research into machine learning and intelligent systems.</p></article>
+        <article class="project"><header><h3>Sovereign</h3><span class="status">In development</span></header><p>A personal AI assistant that runs entirely on your own device and works without an internet connection, so your conversations and data never leave it.</p></article>
+        <article class="project"><header><h3>CAIR</h3><span class="status">ICURe Discover</span></header><p>An on-device smart home assistant developed with the University of Southampton, funded by EPSRC IAA and selected for Innovate UK's ICURe Discover programme.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap about">
+      <div>
+        <div class="eyebrow">About</div>
+        <h2 style="font-size:clamp(28px,4vw,40px);margin:12px 0 20px">Founded by Professor Martin de Heaver</h2>
+        <p>Our founder has spent around nine years working with academic and industrial researchers on emerging technologies, and has given evidence to UK Parliament on AI, quantum and regenerative medicine.</p>
+        <p><a href="https://www.linkedin.com/in/martin-de-heaver-79b78a162/">View LinkedIn profile</a></p>
+      </div>
+      <dl class="facts">
+        <div><dt>Company</dt><dd>Datawell Technologies Limited</dd></div>
+        <div><dt>Company number</dt><dd>15949247</dd></div>
+        <div><dt>Based in</dt><dd>United Kingdom</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="contact on-band" id="contact">
+    <div class="wrap">
+      <div class="eyebrow">Contact</div>
+      <h2>Work with us</h2>
+      <p>We welcome conversations with researchers, universities, engineers, investors and industrial partners about research collaboration, licensing and new ventures.</p>
+      <div class="email-row">
+        <a class="email" id="email" href="mailto:contact@frontiermethods.com">contact@frontiermethods.com</a>
+        <button class="copy" id="copy-email" type="button">Copy email</button>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div class="wrap"><div class="footer-top"><a class="brand" href="#top"><span class="logo">∴</span><span>FRONTIER METHODS</span></a><div class="footlinks"><a href="#thesis">Thesis</a><a href="#research">Research agenda</a><a href="#contact">Contact</a></div><span>© 2026 Frontier Methods</span></div><p class="footer-note">Frontier Methods presents a research agenda and conceptual architecture. Descriptions of potential world models, dedicated silicon, distributed inference and advanced radio technologies are exploratory; no implementation, performance result, patent position or commercial readiness is implied. Contact address is a placeholder until confirmed.</p></div></footer>
-</body></html>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Frontier Methods · frontiermethods.com</span>
+    <span>Frontier Methods is a trading name of Datawell Technologies Limited</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('copy-email'), el=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    var text=el.textContent.trim();
+    function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email'},1800);}
+    function fallback(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected, press Ctrl+C';}
+    try{navigator.clipboard.writeText(text).then(done,fallback);}catch(e){fallback();}
+  });
+})();
+</script>
+</body>
+</html>
